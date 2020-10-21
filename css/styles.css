@@ -14,6 +14,9 @@ body .col-lg-6 {
 body .container-fluid {
   padding: 3% 0 3% 10%;
 }
+#categories.container-fluid, #recipes.container-fluid{
+  padding: 5% 0;
+}
 /*font sizes*/
 body h1{
   font-size: 1.5rem;
@@ -24,7 +27,42 @@ body h3 {
 body h4{
   font-size: 1rem;
 }
-/*center*/
+body h5{
+  font-size: 0.75rem;
+}
+
+/*buttons*/
+.red-button {
+  text-align: center;
+  background-color: #F15B51;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #FCDEDC;
+  border-width: 5px;
+  width: 8.125rem;
+  height: 3.1125rem;
+  color: white;
+  font-size: 0.8125rem;
+}
+.blue-button{
+  background-color: transparent;
+   border-radius: 100%;
+   border-style: dashed;
+
+   border-color: #543d97;
+   border-width: 2px;
+   width: 60px;
+   height: 60px;
+   color:#543d97;
+   padding: 0;
+   font-weight: bolder;
+}
+#categories .red-button, #recipes .red-button, #recipe-videos .red-button{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*classes*/
 .center{
   text-align: center;
 }
@@ -84,20 +122,6 @@ body h4{
   font-family: Sans-black-cap;
 }
 
-/*buttone*/
-.red-button {
-  text-align: center;
-  background-color: #F15B51;
-  border-radius: 30px;
-  border-style: solid;
-  border-color: #FCDEDC;
-  border-width: 5px;
-  width: 8.125rem;
-  height: 3.1125rem;
-  color: white;
-  font-size: 0.8125rem;
-}
-
 /**************************************** Main Page *******************************/
 /* navbar */
 .navbar-brand {
@@ -143,21 +167,83 @@ width: 60%;
 #categories img {
   padding: 7% 0 5%;
 }
-#categories.container-fluid{
-  padding: 3% 0;
-}
-.categories-title-row{
-    padding: 3% 0 5% 10%;
+
+.categories-title-row, .recipes-title{
+    padding: 3% 0 3% 10%;
 }
 .categories-row{
   background-color: #ECEFFB;
   padding: 3% 0 0 10%;
   margin-bottom: 3rem;
 }
-#categories .red-button{
-  margin-left: auto;
-  margin-right: auto;
+
+
+/*recipes*/
+#recipes img{
+  width: 60%;
+  margin-top: 2rem;
 }
+#recipes.container-fluid {
+  position: relative;
+}
+
+.recipe-number{
+  line-height: 3;
+}
+
+.recipes-row{
+  padding: 3% 0 3% 10%;
+}
+
+.row.half-background{
+  width: 100%;
+  height: 15rem;
+  background-color: #ECEFFB;
+  position: absolute;
+  z-index: -1;
+  bottom: 8.5rem;
+}
+
+
+
+/*recipe-videos*/
+#recipe-videos.container-fluid{
+position: relative;
+  padding: 3% 10%;
+}
+#recipe-videos img, .videos-description{
+  width: 90%;
+  line-height: 2;
+}
+#recipe-videos img{
+  padding-bottom: 1rem;
+}
+.recipe-videos-box{
+  position: relative;
+  padding: 3rem 0;
+}
+.bottom{
+  position: absolute;
+  bottom: 0;
+
+}
+.recipe-videos-title{
+  padding-bottom: 15%;
+}
+.date{
+  line-height: 2;
+}
+.recipe-videos-buttons{
+  position: absolute;
+  top: 20%;
+  right: 12%;
+
+}
+.recipe-videos-title p{
+  color: #968c83;
+}
+
+
  @media(max-width: 1275px)and (min-width:1125px)  {
   body h1{
     font-size: 1.25rem;
@@ -168,10 +254,14 @@ width: 60%;
   body h4{
     font-size: 0.75rem;
   }
-  body .container-fluid{
-    overflow: hidden;
+  body h5{
+    font-size: 0.5rem;
+  }
+  .row.half-background{
+    bottom: 5rem;
   }
 }
+
 @media(max-width: 1125px) and (min-width: 770px){
   body h1{
     font-size: 1rem;
@@ -182,15 +272,44 @@ width: 60%;
   body h4{
     font-size: 0.5rem;
   }
-  body .container-fluid{
-    overflow: hidden;
+  body h5{
+    font-size: 0.25rem;
+  }
+  .row.half-background{
+    bottom: 5rem;
+
+  }
+}
+@media(max-width: 1000px){
+  #recipe-videos{
+    text-align: center;
+  }
+
+  #recipe-videos.container-fluid, .recipe-videos-buttons, .recipe-videos-box, .bottom{
+  position: static;
+  }
+  .videos-description{
+    width: 100%;
+  }
+  .recipe-videos-title{
+    padding-bottom: 0;
+  }
+  .recipe-videos-box{
+    text-align: center;
+  }
+  .recipe-videos-box h4, .recipe-videos-box h5{
+    font-size: 1rem;
   }
 }
 @media(max-width: 770px){
-  #categories, .categories-row {
+
+  #categories, .categories-row, #recipes, .recipes-row{
     text-align: center;
   }
-  body .container-fluid{
-    overflow: hidden;
+  body .container-fluid, .recipes-row, .categories-row, .categories-title-row, .recipes-title{
+    padding: 5%;
+  }
+  .row.half-background{
+    background: none;
   }
 }
